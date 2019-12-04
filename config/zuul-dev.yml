@@ -1,6 +1,11 @@
 spring:
   application:
     name: zuul
+  rabbitmq:
+    host: 192.168.64.5
+    port: 5672
+    username: admin
+    password: admin
     
 server:
   port: 3001
@@ -10,7 +15,7 @@ eureka:
     service-url:
       defaultZone: http://eureka1:2001/eureka,http://eureka2:2002/eureka
 
-#zuul默认开启负载均衡。重试默认不开启，需手动开启，需要添加spring-retry依赖
+#zuul默认开启重试
 zuul:
   retryable: true
   routes:
